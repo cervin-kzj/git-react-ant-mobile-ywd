@@ -1,0 +1,34 @@
+.navBar {
+    height: 0.94rem;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.am-navbar-light {
+    background-color: #ff9900;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.am-navbar-light .am-navbar-title {
+    color: #ffffff;
+    font-size: 0.33rem;
+}
+
+.am-navbar-right {
+    font-size: 0.33rem;
+}
+
+.iconClass {
+    font-size: 0.42rem;
+}
+
+.am-navbar-left {
+    padding-left: 0.34rem;
+}
+
+.am-navbar-right {
+    margin-right: 0.28rem;
+}

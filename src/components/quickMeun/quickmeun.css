@@ -1,0 +1,25 @@
+.quickMeunItem {
+    position: absolute;
+    left: 0;
+    top: 0.12rem;
+    width: 100%;
+}
+
+.quickMeunItem>.iconClass {
+    position: absolute;
+    width: 0.53rem;
+    height: 0.53rem;
+    border-radius: 50%;
+}
+
+.goBack {
+    left: 0.23rem;
+}
+
+.cart {
+    right: 1.21rem;
+}
+
+.menu {
+    right: 0.28rem;
+}

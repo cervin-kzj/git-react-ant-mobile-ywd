@@ -1,0 +1,150 @@
+.itemInfo>.info>.title {
+    font-size: 0.32rem;
+    line-height: 0.42rem;
+}
+
+.itemInfo>.info>.cartNum {
+    display: flex;
+    width: 2.34rem;
+    height: 0.47rem;
+    line-height: 0.45rem;
+    font-size: 0.25rem;
+    margin-top: 0.15rem;
+    border: 0.01rem solid #cccccc;
+    box-sizing: border-box;
+}
+
+.itemInfo>.info .attr {
+    display: inline-block;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    font-size: 0.27rem;
+    color: #999999;
+}
+
+.itemInfo>.price {
+    flex-grow: 1;
+    height: 100%;
+    line-height: 2.21rem;
+    padding-left: 0.22rem;
+    box-sizing: border-box;
+    color: #000000;
+    font-size: 0.27rem;
+}
+
+.itemInfo>.price>.v {
+    max-width: 1.22rem;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.itemInfo>.price>.rmb {
+    margin-right: 0.1rem;
+}
+
+.itemInfo>.price>.box::after {
+    content: "";
+    display: block;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.itemInfo>.price span {
+    float: left;
+}
+
+.itemInfo>.thumb {
+    display: flex;
+    align-items: center;
+    width: 1.57rem;
+    height: 100%;
+}
+
+.itemInfo>.thumb>img {
+    width: 100%;
+    height: 1.57rem;
+}
+
+.itemInfo>.info {
+    width: 3.21rem;
+    height: 100%;
+    padding: 0.32rem 0.21rem;
+    box-sizing: border-box;
+}
+
+.cartNum>.minus, .cartNum>.plus {
+    width: 0.78rem;
+    text-align: center;
+    border: 0.01rem solid #cccccc;
+    box-sizing: border-box;
+}
+
+.cartNum>.text_wrap {
+    flex-grow: 1;
+    border: 0.01rem solid #cccccc;
+    box-sizing: border-box;
+}
+
+.cartNum>.text_wrap>input {
+    float: left;
+    width: 0.82rem;
+    height: 100%;
+    text-align: center;
+}
+
+.item>.itemInfo {
+    flex-grow: 1;
+    display: flex;
+}
+
+.shopInfo {
+    width: 100%;
+    height: 1.06rem;
+    line-height: 1.06rem;
+    background: url('../../assets/image/store.png') no-repeat 0.36rem center;
+    background-size: 0.36rem 0.36rem;
+    text-indent: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cartItem .item {
+    padding-left: 0.17rem;
+    display: flex;
+}
+
+.item>.checkBox {
+    position: relative;
+    width: 0.84rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.item>.checkBox>input[type='checkbox'] {
+    position: absolute;
+    width: 0.43rem;
+    height: 0.43rem;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.item>.checkBox>i {
+    position: absolute;
+    width: 0.43rem;
+    height: 0.43rem;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translateX(-50%) translateY(-50%);
+    content: '';
+    background: url('../../assets/image/radio_hig.png') no-repeat;
+    /* radio_hig.png */
+    background-position: center center;
+    background-size: 0.43rem 0.43rem;
+}

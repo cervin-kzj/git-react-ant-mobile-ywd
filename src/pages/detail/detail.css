@@ -1,0 +1,128 @@
+.detailWrap {
+    background: #eee;
+    position: relative;
+}
+
+.infoBox {
+    padding-left: 0.29rem;
+    padding-top: 0.05rem;
+    background: #fff;
+}
+
+.infoBox>.item {
+    display: flex;
+}
+
+.infoBox .title {
+    width: 6.23rem;
+    font-size: 0.30rem;
+    line-height: 0.4rem;
+    color: #333333;
+    border-right: 0.01rem solid #dddddd;
+}
+
+.price {
+    max-width: 1.76rem;
+    height: 0.79rem;
+    overflow: hidden;
+}
+
+.price>span {
+    float: left;
+    width: 100%;
+}
+
+.tag-item {
+    text-align: center;
+    font-size: 0.2rem;
+}
+
+.tag-item li {
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 0.2rem 0.2rem 0rem;
+}
+
+.tag>li {
+    line-height: 0.3rem;
+    border: 0.02rem solid #ff9900;
+    color: #ff9900;
+    float: left;
+    padding: 0 0.06rem;
+}
+
+.favourable {
+    margin-bottom: 0.1rem;
+}
+
+.favourable>li {
+    height: 0.3rem;
+    background-color: #ff9900;
+    line-height: 0.3rem;
+    color: #ffffff;
+    float: left;
+    padding: 0 0.11rem;
+}
+
+.price>.item-act-price {
+    color: #e60012;
+    font-size: 0.26rem;
+    line-height: 0.43rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price>.item-tag-price {
+    color: #666666;
+    font-size: 0.18rem;
+    text-decoration: line-through;
+    line-height: 0.36rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.infoContainer {
+    margin-top: 0.32rem;
+    background: #fff;
+    padding: 0 0.3rem 0.98rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.collection {
+    width: 0.98rem;
+    text-align: center;
+}
+
+.collection>img {
+    width: 0.36rem;
+    height: 0.36rem;
+}
+
+.collection>h3 {
+    font-size: 0.16rem;
+    color: #e71f19;
+    margin-top: 0.13rem;
+}
+
+.am-tabs-default-bar-tab {
+    color: #999999;
+    font-size: 0.25rem;
+    height: 0.435rem;
+    line-height: 0.435rem;
+}
+
+.am-tabs-default-bar-tab-active {
+    color: #ff9900;
+}
+
+.am-tabs-default-bar-underline {
+    border: 0.03rem #ff9900 solid;
+}
+
+.am-tabs-tab-bar-wrap {
+    position: static;
+    width: 100%;
+}

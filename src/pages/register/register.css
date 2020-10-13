@@ -1,0 +1,114 @@
+.registerInContainer {
+    width: 6rem;
+    height: 7.21rem;
+    /* stylus */
+    margin: 0 auto;
+    margin-top: 1.92rem;
+}
+
+.am-list-item.am-input-item {
+    height: 1.31rem;
+    line-height: 1.31rem;
+}
+
+.am-list-item .am-input-control input, .am-list-item .am-input-label {
+    font-size: 0.29rem;
+}
+
+.am-list-item, .am-list-item .am-list-line, .am-list-item.am-input-item {
+    padding: 0;
+}
+
+.inputClass {
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.am-list-item .am-input-label {
+    color: #333333;
+}
+
+.forgetItem {
+    height: 0.98rem;
+}
+
+.forgetItem>a {
+    float: right;
+    height: 0.98rem;
+    line-height: 0.98rem;
+    color: #666666
+}
+
+.commonBtn {
+    height: 1.01rem;
+    line-height: 1.01rem;
+    font-size: 0.33rem;
+    color: #ffffff;
+    background-color: #ff9900;
+}
+
+.verifyItem {
+    display: flex;
+}
+
+.verifyItem, .verifyItemIn {
+    height: 1.31rem;
+}
+
+.verifyItem>.verifyItemIn {
+    width: 4.46rem;
+    float: left;
+}
+
+.getVerify {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 1.31rem;
+    color: #fe0141;
+}
+
+.agreementItem {
+    height: 1.29rem;
+}
+
+.am-checkbox-agree {
+    margin: 0px;
+    padding: 0px;
+}
+
+.am-checkbox-agree .am-checkbox {
+    width: 0.3rem;
+}
+
+.am-checkbox-inner {
+    width: 0.3rem;
+    height: 0.3rem;
+}
+
+.am-checkbox-agree .am-checkbox-inner {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.am-checkbox-agree .am-checkbox-agree-label {
+    font-size: 0.28rem;
+    line-height: 1.29rem;
+    margin-top: 0px;
+    margin-left: 0.49rem;
+}
+
+.am-checkbox-inner:after {
+    width: 0.05rem;
+    height: 0.11rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.am-checkbox-agree .am-checkbox-agree-label {
+    color: #666666;
+}
+
+.am-checkbox-agree .am-checkbox-agree-label>a {
+    color: #333333;
+}

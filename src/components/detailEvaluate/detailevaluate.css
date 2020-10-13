@@ -1,0 +1,31 @@
+.evaluateCon {
+    width: 100%;
+}
+
+.evaluateTab {
+    width: 100%;
+    padding: 0.1rem 0;
+    border-bottom: 0.01rem solid #dddddd;
+}
+
+.evaluateTab>li {
+    float: left;
+    margin-right: 0.4rem;
+    width: 1.35rem;
+    height: 0.51rem;
+    line-height: 0.51rem;
+    font-size: 0.24rem;
+    text-align: center;
+    border-radius: 0.23rem;
+    color: #ffffff;
+    background: #999999;
+}
+
+.evaluateTab>li:last-child {
+    margin-right: 0rem;
+}
+
+.evaluateTab>.act {
+    color: #ffffff;
+    background: #ff9900;
+}

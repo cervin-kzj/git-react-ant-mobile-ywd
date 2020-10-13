@@ -1,0 +1,45 @@
+.avatarBox {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 2.29rem;
+    background-color: #ff9900;
+}
+
+.avatarBox>div {
+    position: absolute;
+    top: 0.95rem;
+    left: 50%;
+    z-index: 1;
+    width: 2.07rem;
+    height: 2.07rem;
+    background-color: #ffffff;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.nickName {
+    position: absolute;
+    top: 3.25rem;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    color: #333333;
+    font-size: 0.31rem;
+    height: 0.31rem;
+    line-height: 0.31rem;
+}
+
+.unLogin {
+    background-color: #e6dfdf;
+}
+
+.avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.81rem;
+    height: 1.81rem;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+}

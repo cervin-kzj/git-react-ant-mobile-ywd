@@ -1,0 +1,46 @@
+.loginInContainer {
+    width: 6rem;
+    height: 4.65rem;
+    margin: 0 auto;
+    margin-top: 1.92rem;
+}
+
+.am-list-item.am-input-item {
+    height: 1.31rem;
+    line-height: 1.31rem;
+}
+
+.am-list-item .am-input-control input, .am-list-item .am-input-label {
+    font-size: 0.29rem;
+}
+
+.am-list-item, .am-list-item .am-list-line, .am-list-item.am-input-item {
+    padding: 0;
+}
+
+.inputClass {
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.am-list-item .am-input-label {
+    color: #333333;
+}
+
+.forgetItem {
+    height: 0.98rem;
+}
+
+.forgetItem>a {
+    float: right;
+    height: 0.98rem;
+    line-height: 0.98rem;
+    color: #666666
+}
+
+.commonBtn {
+    height: 1.01rem;
+    line-height: 1.01rem;
+    font-size: 0.33rem;
+    color: #ffffff;
+    background-color: #ff9900;
+}

@@ -1,0 +1,10 @@
+.cartContainer {
+    margin-top: 0.94rem;
+    margin-bottom: 2.22rem;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.cartContainer .item {
+    height: 2.12rem;
+}

@@ -1,0 +1,40 @@
+.moduleItem {
+    background-color: #fff;
+}
+
+.moduleItem>.titleBox {
+    display: block;
+    height: 1.24rem;
+    line-height: 1.24rem;
+    font-size: 0.3rem;
+    color: #333333;
+    text-indent: 0.46rem;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+.moduleItem>.titleBox>.more {
+    float: right;
+    color: #999999;
+}
+
+.moduleItem>.ItemList {
+    display: flex;
+}
+
+.ItemList>li {
+    width: 20%;
+    height: 1.88rem;
+    text-align: center;
+    padding-top: 1.2rem;
+    box-sizing: border-box;
+    font-size: 0.23rem;
+    /* font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px; */
+    color: #666666;
+}
+
+.iconClass {
+    width: 0.42rem;
+    height: 0.42rem;
+}
