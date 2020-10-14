@@ -3,7 +3,9 @@ import CommonFooter from "../../components/commonFooter"
 import IndexBanner from "../../components/indexBanner"
 import CommonSearch from "../../components/commonSearch"
 import IndexCategoryItem from "../../components/indexCategoryItem"
-import "./index.css"
+// import "./index.css"
+import "./index.styl"
+
 import $ from "jquery";
 class Index extends React.Component {
     constructor(props) {

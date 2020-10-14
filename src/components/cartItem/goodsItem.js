@@ -1,6 +1,7 @@
 import React from "react";
 import { SwipeAction } from 'antd-mobile';
-import "./cartitem.css";
+// import "./cartitem.css";
+import "./cartitem.styl";
 
 class GoodsItem extends React.Component {
     constructor(props) {

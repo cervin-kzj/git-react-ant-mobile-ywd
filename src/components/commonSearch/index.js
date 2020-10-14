@@ -1,6 +1,6 @@
 import React from "react"
-import "./commonsearch.css"
-
+// import "./commonsearch.css"
+import "./commonsearch.styl"
 class IndexSearch extends React.Component {
     constructor(props) {
         super(props)

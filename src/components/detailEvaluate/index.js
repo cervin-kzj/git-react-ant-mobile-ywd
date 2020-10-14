@@ -1,7 +1,7 @@
 import React from "react"
 import EvaluateItem from "./evaluateItem"
-import "./detailevaluate.css"
-
+// import "./detailevaluate.css"
+import "./detailevaluate.styl"
 class DetailEvaluate extends React.Component {
     constructor(props) {
         super(props)

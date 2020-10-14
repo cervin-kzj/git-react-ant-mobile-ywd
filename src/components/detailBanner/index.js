@@ -1,7 +1,7 @@
 import React from "react"
 import { Carousel } from 'antd-mobile';
-import "./detailbanner.css"
-
+// import "./detailbanner.css"
+import "./detailbanner.styl"
 class Detailbanner extends React.Component {
     constructor(props) {
         super(props)

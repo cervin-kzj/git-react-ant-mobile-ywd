@@ -1,7 +1,7 @@
 import React from "react"
 import { Carousel } from 'antd-mobile';
-import "./indexbanner.css";
-
+// import "./indexbanner.css";
+import "./indexbanner.styl";
 class IndexBanner extends React.Component {
     constructor(props) {
         super(props)

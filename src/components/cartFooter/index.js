@@ -1,6 +1,6 @@
 import React from "react";
-import "./cartfooter.css";
-
+// import "./cartfooter.css";
+import "./cartfooter.styl";
 class CartFooter extends React.Component {
     constructor(props) {
         super(props)

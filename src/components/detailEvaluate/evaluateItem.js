@@ -1,6 +1,6 @@
 import React from "react";
-import "./evaluateitem.css";
-
+// import "./evaluateitem.css";
+import "./evaluateitem.styl";
 class EvaluateItem extends React.Component {
     constructor(props) {
         super(props)

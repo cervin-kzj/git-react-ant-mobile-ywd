@@ -1,13 +1,13 @@
 import React from "react";
-import "./detailsku.css"
-
+// import "./detailsku.css"
+import "./detailsku.styl"
 class DetailSku extends React.Component {
     constructor(props) {
         super(props)
     }
     render() {
         return (
-            <div className="detail_sku_v1_main">
+            <div className="detail_sku_v1_main" style={{ display: 'none' }}>
                 <div className="main">
                     <div className="head">
                         <div className="avt">

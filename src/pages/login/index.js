@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import CommonHeader from "../../components/commonHeader"
-import "./login.css"
+// import "./login.css"
+import "./login.styl"
 import { InputItem, Button } from 'antd-mobile';
 
 class Login extends React.Component {

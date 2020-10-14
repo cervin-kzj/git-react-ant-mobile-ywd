@@ -4,7 +4,8 @@ import CommonFooter from "../../components/commonFooter"
 import MineModuleItem from "../../components/mineModuleItem"
 import MineQuickMenuItem from "../../components/mineQuickMenuItem"
 import MineAvatarBox from "../../components/mineAvatarBox"
-import "./mine.css"
+// import "./mine.css"
+import "./mine.styl"
 
 class Mine extends React.Component {
     constructor(props) {

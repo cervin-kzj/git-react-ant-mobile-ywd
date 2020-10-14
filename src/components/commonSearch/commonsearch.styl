@@ -1,0 +1,40 @@
+@import "../../stylus/color.styl"
+@import "../../stylus/font.styl"
+@import "../../stylus/common.styl"
+
+.searchBox
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    textVerticalCenter(0.95rem)
+    text-align: center;
+    & >div
+        width: 5.16rem;
+        elePositionCenter()
+    & input[type='submit']
+        position: absolute;
+        top: 50%;
+        right: 0.22rem;
+        width: 0.37rem;
+        height: 0.39rem;
+        transform: translateY(-50%);
+        background: url('../../assets/image/search.png') no-repeat center center / 0.37rem 0.39rem;
+    & input[type='text']
+        width: 100%;
+        textVerticalCenter(0.62rem)
+        background-color: $color2;
+        border-radius: 14px;
+        opacity: 0.71;
+        text-indent: 0.23rem;
+        font-size: $fontSize2;
+    & input[type='text']::placeholder
+        color: $color5;
+
+.searchBoxFixed
+    position: fixed;
+    background: $color1;
+    
+
+ 

@@ -1,0 +1,24 @@
+// 清浮动
+clearfix() {
+    content: '';
+    display: block;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+// 绝对定位居中
+elePositionCenter() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+// 文本垂直居中
+textVerticalCenter(val) {
+    height: val;
+    line-height: val;
+}

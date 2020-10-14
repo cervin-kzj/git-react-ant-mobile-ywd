@@ -1,11 +1,11 @@
 import React from "react"
-import { SwipeAction } from 'antd-mobile';
 import CommonHeader from "../../components/commonHeader"
 import CommonFooter from "../../components/commonFooter"
 import CartFooter from "../../components/cartFooter"
 import CartItem from "../../components/cartItem"
 
-import "./cart.css"
+// import "./cart.css"
+import "./cart.styl"
 class Cart extends React.Component {
     constructor(props) {
         super(props)

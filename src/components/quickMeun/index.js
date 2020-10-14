@@ -1,6 +1,6 @@
 import React from "react";
-import "./quickmeun.css"
-
+// import "./quickmeun.css"
+import "./quickmeun.styl"
 class QuickMeun extends React.Component {
     constructor(props) {
         super(props)

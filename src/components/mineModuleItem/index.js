@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import "./minemoduleitem.css";
-
+// import "./minemoduleitem.css";
+import "./minemoduleitem.styl";
 class MineModuleItem extends React.Component {
     constructor(props) {
         super(props)

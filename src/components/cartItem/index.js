@@ -1,5 +1,6 @@
 import React from "react";
-import "./cartitem.css";
+// import "./cartitem.css";
+import "./cartitem.styl";
 import GoodsItem from "./goodsItem";
 
 class CartItem extends React.Component {

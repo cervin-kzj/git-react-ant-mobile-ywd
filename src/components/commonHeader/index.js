@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "./commonheader.css";
+// import "./commonheader.css";
+import "./commonheader.styl";
 import { NavBar } from 'antd-mobile';
 import { createFromIconfontCN } from '@ant-design/icons';
 const IconFont = createFromIconfontCN({

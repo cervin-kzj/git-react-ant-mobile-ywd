@@ -1,5 +1,6 @@
 import React from "react"
-import "./detail.css"
+// import "./detail.css"
+import "./detail.styl"
 import { Tabs, Badge } from 'antd-mobile';
 import $ from "jquery"
 import Detailevaluate from "../../components/detailEvaluate"

@@ -1,0 +1,30 @@
+@import "../../stylus/color.styl"
+@import "../../stylus/font.styl"
+@import "../../stylus/common.styl"
+
+.moduleItem
+    background-color: $color2;
+    & >.titleBox
+        display: block;
+        textVerticalCenter(1.24rem)
+        font-size: $fontSize1;
+        color: $color4;
+        text-indent: 0.46rem;
+        border-bottom: 1px solid #b3b3b3;
+        & >.more
+            float: right;
+            color: $color5;
+    & >.ItemList
+        display: flex;
+        & >li
+            width: 20%;
+            height: 1.88rem;
+            text-align: center;
+            padding-top: 1.2rem;
+            box-sizing: border-box;
+            font-size: $fontSize5;
+            color: $color3;
+
+.iconClass
+    width: 0.42rem;
+    height: 0.42rem;

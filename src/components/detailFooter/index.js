@@ -1,6 +1,6 @@
 import React from "react"
-import "./detailfooter.css";
-
+// import "./detailfooter.css";
+import "./detailfooter.styl";
 class DetailFooter extends React.Component {
     constructor(props) {
         super(props)

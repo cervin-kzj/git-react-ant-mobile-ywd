@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "./mineavatarbox.css";
-
+// import "./mineavatarbox.css";
+import "./mineavatarbox.styl";
 class MineAvatarBox extends React.Component {
     constructor(props) {
         super(props)

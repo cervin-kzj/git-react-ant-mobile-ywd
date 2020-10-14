@@ -1,0 +1,72 @@
+@import "../../stylus/color.styl"
+@import "../../stylus/font.styl"
+@import "../../stylus/common.styl"
+
+.categoryTitle
+    textVerticalCenter(0.95rem)
+    font-size: $fontSize3;
+    text-indent: 0.53rem;
+    color: $color4;
+
+.categoryBox
+    overflow-y: scroll;
+
+.categoryList
+    width: 10rem;
+    & >li
+        float: left;
+        width: 3rem;
+        height: 5rem;
+        margin-right: 0.23rem;
+        border: 2px solid $color6;
+        background: $color2;
+        box-sizing: border-box;
+    & ::after
+        clearfix()
+
+.goodsThumbBox
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    & >img
+        width: 100%;
+        height: 100%;
+
+.goodsPriceBox
+    height: 0.30rem;
+    margin-top: 0.32rem;
+    & ::after
+        clearfix()
+
+.item-act-price
+    float: left;
+    color: #e60012;
+    font-size: $fontSize2;
+    textVerticalCenter(0.28rem)
+    margin-left: 0.34rem;
+    & >.rmb
+        font-size: $fontSize1;
+
+.item-tag-price 
+    float: right;
+    color: $color3;
+    font-size: $fontSize5;
+    textVerticalCenter(0.30rem)
+    text-decoration: line-through;
+    margin-right: 0.41rem;
+    & >.rmb
+        font-size: $fontSize2;
+
+.goodsTitle
+    float: left;
+    padding: 0 0.22rem;
+    margin-top: 0.24rem;
+    color: $color3;
+    font-size: $fontSize2;
+    line-height: 0.38rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;

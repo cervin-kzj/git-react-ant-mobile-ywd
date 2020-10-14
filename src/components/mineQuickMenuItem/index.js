@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import "./minequickmenuitem.css";
-
+// import "./minequickmenuitem.css";
+import "./minequickmenuitem.styl";
 class MineQuickMenuItem extends React.Component {
     constructor(props) {
         super(props)

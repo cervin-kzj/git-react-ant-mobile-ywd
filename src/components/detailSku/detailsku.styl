@@ -1,0 +1,131 @@
+@import "../../stylus/color.styl"
+@import "../../stylus/font.styl"
+@import "../../stylus/common.styl"
+
+.avt 
+    position: absolute;
+    top: -0.28rem;
+    left: 0;
+    width: 2.16rem;
+    height: 2.16rem;
+    background-color: $color7;
+    & img
+        width: 2.02rem;
+        height: 2.02rem;
+        elePositionCenter()
+
+.close
+    position: absolute;
+    top: 0.29rem;
+    right: 0rem;
+    width: 0.56rem;
+    height: 0.56rem;
+    & img
+        width: 100%;
+
+.sku_choose .item.active
+    color: $color2;
+    background-color: $color1;
+
+.sku_choose .item
+    float: left;
+    textVerticalCenter(0.45rem)
+    padding: 0 0.45rem;
+    margin: 0rem 0.2rem 0.2rem 0rem;
+    font-size: 0.18rem;
+    text-align: center;
+    color: #bbbbbb;
+    background-color: $color7;
+    border-radius: 0.07rem;
+
+.sku_choose::after
+    clearfix()
+
+.detail_sku_v1_main
+    /* display: none; */
+    width: 100%;
+    top: 0%;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0.98rem;
+    left: 0;
+    right: 0;
+    z-index: 110;
+    background-color: rgba(0, 0, 0, .7);
+    & .main
+        position: absolute;
+        bottom: 0rem;
+        width: 100%;
+        min-height: 4rem;
+        max-height: 5.74rem;
+        background-color: $color2;
+        padding: 0rem 0.29rem 0rem 0.42rem;
+        box-sizing: border-box;
+    & .head
+        position: relative;
+        padding: 0 0 0 2.16rem;
+        height: 2.16rem;
+        & .r
+            padding-top: 0.66rem;
+        & .price
+            margin-left: 0.23rem;
+            font-size: $fontSize5;
+            textVerticalCenter(0.35rem)
+            color: #eb2222;
+        & .check_attr
+            display: block;
+            textVerticalCenter(0.34rem)
+    & .body
+        max-height: 3.55rem;
+        overflow-y: scroll;
+    & .goodsnumber
+        textVerticalCenter(0.32rem)
+    & .sku_kind
+        textVerticalCenter(0.28rem)
+        margin: 0.25rem 0rem 0.2rem;
+        font-size: $fontSize2;
+        color: $color4;
+
+.detail_sku_v1_main .head .goodsnumber, .detail_sku_v1_main .head .check_attr {
+    font-size: $fontSize6;
+    margin-left: 0.23rem;
+}
+
+.count_choose>.count
+    float: left;
+    font-size: $fontSize2;
+    color: $color4;
+    textVerticalCenter(0.5rem)
+
+.count_choose>.num_wrap_v2
+    float: right;
+
+.popupSkuArea
+    margin-top: 0.15rem;
+    overflow: hidden;
+
+.num_wrap_v2>.text_wrap>input[type='text']
+    font-size: $fontSize9;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+.num_wrap_v2>.minus, .num_wrap_v2>.plus, .num_wrap_v2>.text_wrap 
+    float: left;
+
+.num_wrap_v2>.text_wrap
+    width: 1rem;
+    height: 0.5rem;
+    box-sizing: border-box;
+    border: 1px solid $color7;
+
+.count_choose>.num_wrap_v2
+    float: right;
+
+.num_wrap_v2>.minus, .num_wrap_v2>.plus
+    display: inline-block;
+    background-color: $color5;
+    color: $color2;
+    text-align: center;
+    width: 0.5rem;
+    textVerticalCenter(0.5rem)

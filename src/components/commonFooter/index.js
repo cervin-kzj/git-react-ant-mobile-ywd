@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "./commonfooter.css";
+// import "./commonfooter.css";
+import "./commonfooter.styl";
 import { TabBar } from 'antd-mobile';
 class CommonFooter extends React.Component {
     constructor(props) {

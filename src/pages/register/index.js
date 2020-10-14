@@ -1,6 +1,7 @@
 import React from "react"
 import CommonHeader from "../../components/commonHeader"
-import "./register.css"
+// import "./register.css"
+import "./register.styl"
 import { InputItem, Button, Checkbox } from 'antd-mobile';
 const AgreeItem = Checkbox.AgreeItem;
 

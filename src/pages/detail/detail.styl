@@ -1,0 +1,104 @@
+@import "../../stylus/color.styl"
+@import "../../stylus/font.styl"
+@import "../../stylus/common.styl"
+
+.detailWrap
+    background: #eee;
+    position: relative;
+
+.infoBox
+    padding-left: 0.29rem;
+    padding-top: 0.05rem;
+    background: $color2;
+    & >.item
+        display: flex;
+    &  .title
+        width: 6.23rem;
+        font-size: $fontSize1;
+        line-height: 0.4rem;
+        color: $color4;
+        border-right: 0.01rem solid $color7; 
+
+.price
+    max-width: 1.76rem;
+    height: 0.79rem;
+    overflow: hidden;
+    & >span
+        float: left;
+        width: 100%;
+    & >.item-act-price
+        color: #e60012;
+        font-size: $fontSize3;
+        line-height: 0.43rem;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;   
+    & >.item-tag-price
+        color: $color4;
+        font-size: 0.18rem;
+        text-decoration: line-through;
+        line-height: 0.36rem;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;    
+
+.tag-item
+    text-align: center;
+    font-size: $fontSize10;
+    & li
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 0.2rem 0.2rem 0rem;
+    & .tag>li
+        line-height: 0.3rem;
+        border: 0.02rem solid $color1;
+        color:$color1;
+        float: left;
+        padding: 0 0.06rem;
+
+.favourable 
+    margin-bottom: 0.1rem;
+    & >li
+        background-color: $color1;
+        textVerticalCenter(0.3rem)
+        color:$color2;
+        float: left;
+        padding: 0 0.11rem;
+
+.infoContainer {
+    margin-top: 0.32rem;
+    background: $color2;
+    padding: 0 0.3rem 0.98rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.collection 
+    width: 0.98rem;
+    text-align: center;
+    & >img
+        width: 0.36rem;
+        height: 0.36rem;
+    & >h3
+        font-size: 0.16rem;
+        color: #e71f19;
+        margin-top: 0.13rem;
+
+.am-tabs-default-bar-tab {
+    color: $color5;
+    font-size: $fontSize8;
+    textVerticalCenter(0.435rem)
+}
+
+.am-tabs-default-bar-tab-active {
+    color: $color1;
+}
+
+.am-tabs-default-bar-underline {
+    border: 0.03rem $color1 solid;
+}
+
+.am-tabs-tab-bar-wrap {
+    position: static;
+    width: 100%;
+}

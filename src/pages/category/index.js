@@ -2,7 +2,9 @@ import React from "react"
 import { Tabs, } from 'antd-mobile';
 import CommonSearch from "../../components/commonSearch"
 import CommonFooter from "../../components/commonFooter"
-import "./category.css"
+// import "./category.css"
+import "./category.styl";
+
 const tabs = [
     { title: '母婴专区' },
     { title: '美妆护肤' },
