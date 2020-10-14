@@ -1,5 +1,6 @@
 {
   "name": "ydw",
+  "proxy": "http://47.106.12.223:8569/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -48,7 +49,7 @@
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
-    "querystring": "^0.2.0",
+    "qs": "^6.9.4",
     "rc-form": "^2.4.11",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
