@@ -15,13 +15,13 @@ class IndexBanner extends React.Component {
                 <Carousel
                     autoplay={false}
                     infinite
-                    beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                    afterChange={index => console.log('slide to', index)}
+                    // beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                    // afterChange={index => console.log('slide to', index)}
                 >
                     {this.state.data.map(val => (
                         <a
                             key={val}
-                            href=""
+                            href="#"
                             style={{ display: 'inline-block', width: '100%' }}
                         >
                             <img

@@ -19,6 +19,9 @@ class Detail extends React.Component {
     constructor(props) {
         super(props)
     }
+    componentWillMount() {
+        console.log(this.props.match.params.id);
+    }
     render() {
         return (
             <div className="detailWrap">
@@ -57,8 +60,8 @@ class Detail extends React.Component {
                 <div className="infoContainer">
                     <Tabs tabs={tabs}
                         initialPage={1}
-                        onChange={(tab, index) => { console.log('onChange', index, tab); }}
-                        onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
+                        // onChange={(tab, index) => { console.log('onChange', index, tab); }}
+                        // onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
                     >
                         <DetailInfo></DetailInfo>
                         <Detailevaluate></Detailevaluate>

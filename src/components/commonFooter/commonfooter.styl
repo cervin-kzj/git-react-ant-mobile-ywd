@@ -1,15 +1,49 @@
-.am-tab-bar-bar .am-tab-bar-tab-title
-    font-size: $fontSize9;
-
-.iconClass
-    width: 0.42rem;
-    height: 0.42rem;
+@import "../../stylus/color.styl";
+@import "../../stylus/font.styl";
+@import "../../stylus/common.styl";
 
 .footerBar
     position: fixed;
+    display: flex;
     width: 100%;
-    bottom: 0;
-    z-index: 2;
-
-.footerBar .am-tab-bar-bar
     height: 1.07rem;
+    padding-bottom: 0.12rem;
+    box-sizing: border-box;
+    left :0;
+    bottom: 0;
+    font-size: $fontSize9;
+    border-top: 0.02rem solid #eeeeee;
+    background: $color2;
+    z-index: 2;
+    & >li
+        width :25%;
+        text-align: center;
+        & >a
+            display: block;
+            position relative;
+            left 0;
+            top:0;
+            height: 100%;
+            color:$color4;
+            & >span 
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%)
+                textVerticalCenter($fontSize9)
+    & .active
+        color:$color1
+
+.indexSelectBg
+    background: url('../../assets/image/tab_home_hig.png') no-repeat center 0.14rem /  0.42rem 0.42rem !important;
+
+.categorySelectBg
+    background: url('../../assets/image/tab_menu_hig.png') no-repeat center 0.14rem /  0.42rem 0.42rem !important;
+
+.cartSelectBg
+    background: url('../../assets/image/tab_shopping_hig.png') no-repeat center 0.14rem /  0.42rem 0.42rem !important;
+
+.mineSelectBg
+    background: url('../../assets/image/tab_me_hig.png') no-repeat center 0.14rem /  0.42rem 0.42rem !important;
+ 
+    

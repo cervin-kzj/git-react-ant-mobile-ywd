@@ -17,10 +17,6 @@ class DetailEvaluate extends React.Component {
                 </ul>
                 <ul className="evaluateCon">
                    <EvaluateItem></EvaluateItem>
-                   <EvaluateItem></EvaluateItem>
-                   <EvaluateItem></EvaluateItem>
-                   <EvaluateItem></EvaluateItem>
-                   <EvaluateItem></EvaluateItem>
                 </ul>
             </div>
         )

@@ -18,7 +18,7 @@ function App() {
         <Route path="/index" exact component={IndexComponent}></Route>
         <Route path="/mine" exact component={MineComponent}></Route>
         <Route path="/category" exact component={CategoryComponent}></Route>
-        <Route path="/detail" exact component={DetailComponent}></Route>
+        <Route path="/detail/:id" exact component={DetailComponent}></Route>
         <Route path="/cart" exact component={CartComponent}></Route>
         <Redirect to="/index"></Redirect>
       </Switch>
