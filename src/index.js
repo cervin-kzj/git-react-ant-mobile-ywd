@@ -6,9 +6,14 @@ import 'antd-mobile/dist/antd-mobile.css'
 import "./assets/js/scale.js"
 import App from './App';
 import { HashRouter as Router } from "react-router-dom"
+import { Provider } from "react-redux"
+import { store } from "./store"
+
 ReactDOM.render(
   <Router>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </Router>,
   document.getElementById('root')
 );
