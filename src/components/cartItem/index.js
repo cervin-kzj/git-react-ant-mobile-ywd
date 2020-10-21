@@ -8,12 +8,17 @@ class CartItem extends React.Component {
         super(props)
     }
     render() {
+        let { shop_name, goods_list } = this.props.item
         return (
             <div className="cartItem">
-                <div className="shopInfo">杭州保税区仓杭州保税区仓杭州保税区仓杭州保税区仓杭州保税区仓</div>
-                <GoodsItem></GoodsItem>
-                <GoodsItem></GoodsItem>
-                <GoodsItem></GoodsItem>
+                <div className="shopInfo">{shop_name}</div>
+                {
+                    goods_list.map((item, index) => {
+                        return (
+                            <GoodsItem key={index} item={item}></GoodsItem>
+                        )
+                    })
+                }
             </div>
         )
     }

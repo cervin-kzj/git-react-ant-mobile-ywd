@@ -7,8 +7,18 @@ class DetailInfo extends React.Component {
     }
     render() {
         return (
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', backgroundColor: '#fff', paddingTop: "0.26rem" }}>
-                <img src={require('../../assets/image/xiangqing.png')} style={{ width: `100%` }} />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', backgroundColor: '#fff', paddingTop: "0.26rem" }}>
+                {
+                    this.props.item != undefined
+                        ?
+                        this.props.item.map((item, index) => {
+                            return (
+                                <img src={item} style={{ width: `100%` }} key={index} />
+                            )
+                        })
+                        :
+                        null
+                }
             </div>
         )
     }

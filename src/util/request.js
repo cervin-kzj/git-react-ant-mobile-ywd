@@ -19,13 +19,13 @@ axios.interceptors.response.use(res => {
 /**
  * 首页数据
  */
-export const getIndexData = () => {
+export const getIndexData = () => (
     axios({
         url: "getIndexData",
         method: "get",
         params: {}
     })
-}
+)
 
 /**
  * 分类数据
@@ -68,10 +68,10 @@ export const register = (phone, password) => {
  * 商品详情
  * @param {*} pid 
  */
-export const getDetails = pid => {
+export const getDetails = pid => (
     axios({
         url: "getDetails",
         method: "get",
         params: { pid }
     })
-}
+)

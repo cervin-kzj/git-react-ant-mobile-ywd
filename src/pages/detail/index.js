@@ -1,4 +1,6 @@
 import React from "react"
+import { connect } from "react-redux"
+import { getDetail, requestDetailsAction } from "../../store/modules/detail"
 // import "./detail.css"
 import "./detail.styl"
 import { Tabs, Badge } from 'antd-mobile';
@@ -17,18 +19,42 @@ const tabs = [
 
 class Detail extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            isShow: false,
+            type: ""
+        }
     }
     componentWillMount() {
-        console.log(this.props.match.params.id);
+        this.props.detailsAction(this.props.match.params.id)
+    }
+    skumain(bool, type) {
+        this.setState({
+            isShow: false
+        }, () => {
+            this.setState({
+                isShow: bool,
+                type: type
+            }, () => {
+                console.log('isShow', this.state.isShow)
+            })
+        })
     }
     render() {
+        if (this.props.detail.buySelect != undefined) {
+            let arr = this.props.detail.buySelect;
+            arr.forEach((item, index) => {
+                arr[index].isActive = 0;
+            })
+            this.props.detail.buySelect = arr;
+        }
+        let { swiperImgArr, describe, name, original_price, reduct_price, shopDes, buyerReviews, allowance, isFreeShip } = this.props.detail;
         return (
             <div className="detailWrap">
-                <Detailbanner></Detailbanner>
+                <Detailbanner item={swiperImgArr}></Detailbanner>
                 <div className="infoBox">
                     <div className="item">
-                        <h2 className="title">Aptamil 德国爱他美 婴儿奶粉 2段800/克3罐装 6-10月</h2>
+                        <h2 className="title">{name}</h2>
                         <div className="collection">
                             <img src={require('../../assets/image/collection.png')} />
                             <h3>收藏</h3>
@@ -37,22 +63,31 @@ class Detail extends React.Component {
                     <div className="item" style={{ marginTop: '0.1rem' }}>
                         <div className="price">
                             <span className="item-act-price">
-                                <span className="rmb">¥</span>445.00
+                                <span className="rmb">¥</span>{reduct_price}
                             </span>
                             <span className="item-tag-price">
-                                <span className="rmb">¥</span>998.00
+                                <span className="rmb">¥</span>{original_price}
                             </span>
                         </div>
                         <div className="tag-item">
                             <ul className="favourable clearfix">
-                                <li>6.5折</li>
-                                <li>包邮</li>
+                                <li>{parseFloat(allowance * 10).toFixed(1)}折</li>
+                                {
+                                    isFreeShip == true ? <li>包邮</li> : null
+                                }
                             </ul>
                             <ul className="tag clearfix">
-                                <li>正品货源</li>
-                                <li>一件代发</li>
-                                <li>全球直邮</li>
-                                <li>售后无忧</li>
+                                {
+                                    describe != undefined
+                                        ?
+                                        describe.map((item, index) => {
+                                            return (
+                                                <li key={index}>{item}</li>
+                                            )
+                                        })
+                                        :
+                                        null
+                                }
                             </ul>
                         </div>
                     </div>
@@ -60,16 +95,16 @@ class Detail extends React.Component {
                 <div className="infoContainer">
                     <Tabs tabs={tabs}
                         initialPage={1}
-                        // onChange={(tab, index) => { console.log('onChange', index, tab); }}
-                        // onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
+                    // onChange={(tab, index) => { console.log('onChange', index, tab); }}
+                    // onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
                     >
-                        <DetailInfo></DetailInfo>
-                        <Detailevaluate></Detailevaluate>
+                        <DetailInfo item={shopDes}></DetailInfo>
+                        <Detailevaluate item={buyerReviews}></Detailevaluate>
                     </Tabs>
                 </div>
                 <QuickMeun></QuickMeun>
-                <DetailSku></DetailSku>
-                <DetailFooter></DetailFooter>
+                <DetailSku skumain={(bool, type) => { this.skumain(bool, type) }} isShow={this.state.isShow} type={this.state.type} detail={this.props.detail}></DetailSku>
+                <DetailFooter skumain={(bool, type) => { this.skumain(bool, type) }} isShow={this.state.isShow}></DetailFooter>
             </div >
         )
     }
@@ -100,4 +135,18 @@ class Detail extends React.Component {
     }
 }
 
-export default Detail;
+const mapStateToProps = (state) => {
+    return {
+        detail: getDetail(state)
+    }
+}
+
+const mapDispatchToProps = dispatch => (
+    {
+        detailsAction: pid => (
+            dispatch(requestDetailsAction(pid))
+        )
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);

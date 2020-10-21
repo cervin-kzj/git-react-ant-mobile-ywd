@@ -1,4 +1,5 @@
 import React from "react";
+import { FormatTimestamp } from "../../util/Time"
 // import "./evaluateitem.css";
 import "./evaluateitem.styl";
 class EvaluateItem extends React.Component {
@@ -6,20 +7,24 @@ class EvaluateItem extends React.Component {
         super(props)
     }
     render() {
+        let { buyerName, adminReviews, postDescribe, postImg, createTime } = this.props.item;
         return (
             <li className="item">
                 <div className="itemTop clearfix">
-                    <span className="nickName">月色花香</span>
-                    <span className="addTime">2015-10-03 21:47:13</span>
+                    <span className="nickName">{buyerName}</span>
+                    <span className="addTime">{FormatTimestamp(createTime)}</span>
                 </div>
                 <div className="buyerPic">
-                    <img src={require('../../assets/image/buyer.jpg')} />
-                    <img src={require('../../assets/image/buyer.jpg')} />
-                    <img src={require('../../assets/image/buyer.jpg')} />
-                    <img src={require('../../assets/image/buyer.jpg')} />
+                    {
+                        postImg.map((item, index) => {
+                            return (
+                                <img src={item} key={index} />
+                            )
+                        })
+                    }
                 </div>
-                <p className="buyerContent">已经开始喝第二阶段的奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉奶粉了，会继续支持德贝</p>
-                <p className="sellerContent">管理员：亲爱的用户，已返现到您的会员账户，感谢你对德贝的支持，我们会继续给您带来最极致的服务</p>
+                <p className="buyerContent">{postDescribe}</p>
+                <p className="sellerContent">管理员：{adminReviews}</p>
             </li>
         )
     }

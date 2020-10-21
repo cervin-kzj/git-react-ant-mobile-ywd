@@ -9,7 +9,6 @@ class MineQuickMenuItem extends React.Component {
     render() {
         const propsClass = `mineQuickMenuItem ${this.props.className}`
         return (
-
             <ul className={propsClass}>
                 <li>
                     <Link

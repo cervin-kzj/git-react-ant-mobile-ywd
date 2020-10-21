@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import { connect } from "react-redux"
 import { getIsLogin, requestLoginAction } from "../../store/modules/login"
 import CommonHeader from "../../components/commonHeader"
@@ -16,6 +16,9 @@ class Login extends React.Component {
                 phone: "",
                 password: ""
             }
+        }
+        if (this.props.isLogin == true) {
+            this.props.history.go(-1);
         }
     }
     onChange = (type, value) => {
@@ -66,9 +69,11 @@ class Login extends React.Component {
         });
     }
     render() {
-        // console.log('isLogin', this.props.isLogin);
         return (
             <div className="loginWrap">
+                {
+                    this.props.isLogin == true ? <Redirect to='#'></Redirect> : null
+                }
                 <CommonHeader></CommonHeader>
                 <div className="loginOutContainer">
                     <div className="loginInContainer">

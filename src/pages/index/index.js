@@ -1,12 +1,14 @@
 import React from "react"
+import { connect } from "react-redux"
+import { requestIndexDataAction, getIndexDt } from "../../store/modules/home"
 import CommonFooter from "../../components/commonFooter"
 import IndexBanner from "../../components/indexBanner"
 import CommonSearch from "../../components/commonSearch"
 import IndexCategoryItem from "../../components/indexCategoryItem"
 // import "./index.css"
 import "./index.styl"
-
 import $ from "jquery";
+
 class Index extends React.Component {
     constructor(props) {
         super(props)
@@ -17,10 +19,14 @@ class Index extends React.Component {
                 <CommonSearch></CommonSearch>
                 <IndexBanner></IndexBanner>
                 <div className="indexContainer">
-                    <IndexCategoryItem></IndexCategoryItem>
-                    <IndexCategoryItem></IndexCategoryItem>
-                    <IndexCategoryItem></IndexCategoryItem>
-                    <IndexCategoryItem></IndexCategoryItem>
+                    {
+                        this.props.indexData.map((item, index) => {
+                            return (
+                                <IndexCategoryItem item={item} key={index}></IndexCategoryItem>
+                            )
+                        })
+                    }
+
                 </div>
                 <CommonFooter></CommonFooter>
             </div>
@@ -37,9 +43,24 @@ class Index extends React.Component {
         //     }
         // }
     }
+    componentDidMount() {
+        this.props.indexDataAction();
+    }
     componentWillUnmount() {
         // window.onscroll = null;
     }
 }
 
-export default Index;
+const mapStateToProps = (state) => {
+    return {
+        indexData: getIndexDt(state)
+    }
+}
+const mapDispatchToProps = dispatch => (
+    {
+        indexDataAction: () => {
+            dispatch(requestIndexDataAction())
+        }
+    }
+)
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

@@ -1,27 +1,43 @@
 import { login } from "../../util/request"
+import { Toast } from 'antd-mobile';
+import { push, go } from "react-router-redux";
+
 /**
  * initState
  */
 const initState = {
-    isLogin: false
+    isLogin: false,
+    userInfo: {}
 }
 
 /**
  * action creater
  */
-const setIsLoginAction = () => (
+export const setIsLoginAction = (bool) => (
     {
         type: "setIsLoginAction",
-        isLogin: true
+        isLogin: bool
     }
 )
+export const setUserInfoAction = (userInfo) => {
+    return {
+        type: "setUserInfoAction",
+        userInfo: userInfo
+    }
+}
 
 export const requestLoginAction = (user) => {
     return (dispatch, getState) => {
         try {
             login(user.phone, user.password).then(res => {
                 if (res.data.status == 1) {
-                    dispatch(setIsLoginAction());
+                    dispatch(setIsLoginAction(true));
+                    dispatch(setUserInfoAction(user))
+                    // dispatch(push('/mine'));
+                    dispatch(go(-1));
+                }
+                else {
+                    Toast.info(res.data.msg, 1);
                 }
             })
         }
@@ -44,9 +60,15 @@ export const reducersetIsLoginAction = (state = initState, action) => {
                 isLogin: action.isLogin
             }
             break;
+        case "setUserInfoAction":
+            return {
+                ...state,
+                userInfo: action.userInfo
+            }
+            break;
         default:
             return state;
-            break
+            break;
     }
 }
 
@@ -55,4 +77,7 @@ export const reducersetIsLoginAction = (state = initState, action) => {
  */
 export const getIsLogin = (state) => {
     return state.login.isLogin;
+}
+export const getUserInfo = (state) => {
+    return state.login.userInfo;
 }
