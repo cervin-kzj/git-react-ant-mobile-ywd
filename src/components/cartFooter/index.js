@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux"
+import { withRouter } from "react-router-dom"
 import { store } from "../../store"
-import { editIsCheckAllCartInfoAction } from "../../store/modules/cart"
+import { editIsCheckAllCartInfoAction, checkOutInfoAction } from "../../store/modules/cart"
+import { Toast } from 'antd-mobile';
 // import "./cartfooter.css";
 import "./cartfooter.styl";
 class CartFooter extends React.Component {
@@ -10,6 +12,21 @@ class CartFooter extends React.Component {
     }
     checkAll(is_check) {
         this.props.editIsCheckAllCartInfo(is_check)
+    }
+    checkOut() {
+        let goodsIds = [];
+        let arr = this.props.cartInfo;
+        arr.forEach((item, index) => {
+            if (item.is_check) {
+                goodsIds.push(item.goods_id)
+            }
+        })
+        if (goodsIds.length == 0) {
+            Toast.info('请选择要结算的商品', 1);
+        } else {
+            this.props.checkOutInfo(goodsIds)
+            this.props.history.replace("/mine")
+        }
     }
     render() {
         let arr = this.props.cartInfo;
@@ -46,8 +63,8 @@ class CartFooter extends React.Component {
                     <p>合计:<span className="je">{amount}</span></p>
                     <p>(不含运费)</p>
                 </div>
-                <div className="checkOut">去结算</div>
-            </div>
+                <div className="checkOut" onClick={() => { this.checkOut() }}>去结算</div>
+            </div >
         )
     }
     componentDidMount() {
@@ -63,7 +80,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        editIsCheckAllCartInfo: is_check => dispatch(editIsCheckAllCartInfoAction(is_check))
+        editIsCheckAllCartInfo: is_check => dispatch(editIsCheckAllCartInfoAction(is_check)),
+        checkOutInfo: goodsIds => dispatch(checkOutInfoAction(goodsIds))
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(CartFooter);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CartFooter));
