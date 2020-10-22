@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addCartInfoAction, getCartInfo } from "../../store/modules/cart"
+import { getUserInfo } from "../../store/modules/login"
 import { Toast } from 'antd-mobile';
 // import "./detailsku.css"
 import "./detailsku.styl"
@@ -35,37 +36,40 @@ class DetailSku extends React.Component {
         else if (type == "plus") {
             this.setState({
                 goodsNumber: this.state.goodsNumber + 1
+            }, () => {
+                if (this.state.goodsNumber > this.props.detail.total) {
+                    this.setState({
+                        goodsNumber: this.props.detail.total
+                    }, () => {
+                        Toast.info('购买数量应小于等于商品库存数', 1);
+                    })
+                }
             })
-            if (this.state.goodsNumber > this.props.detail.total) {
-                this.setState({
-                    goodsNumber: this.props.detail.total
-                }, () => {
-                    Toast.info('购买数量应小于等于商品库存数', 1);
-                })
-            }
+
         }
     }
     addCart() {
+        // console.log(this.props.detail);
+        let { pid, name, total, original_price, reduct_price, swiperImgArr } = this.props.detail;
         // console.log(this.props.type);
         // this.props.skumain(false)
         let info = {
-            user_phone: "15168828761",
-            goods_id: "00002",
-            goods_name: "圣罗兰/YSL 指甲油50ml",
-            goods_thumb: "http://47.106.12.223:8569/static/img/02.png",
+            user_phone: this.props.userInfo.phone,
+            goods_id: pid,
+            goods_name: name,
+            goods_thumb: swiperImgArr[0],
             goods_attr: ["2L", '3岁以下'],
-            original_price: 100,
-            reduct_price: 69,
-            goods_number: 2,
-            goods_total: 254,
+            original_price: original_price,
+            reduct_price: reduct_price,
+            goods_number: this.state.goodsNumber,
+            goods_total: total,
             shop_id: 99,
             shop_name: "杭州保税区",
-            add_time: "1546515637000",
+            add_time: new Date().getTime(),
             is_check: true,
-            cost_price: 148
+            cost_price: parseFloat(this.state.goodsNumber * reduct_price).toFixed(2)
         };
         this.props.addCart(info);
-        // console.log(this.props.cartInfo);
     }
     render() {
         let { total, reduct_price, swiperImgArr, buySelect } = this.props.detail;
@@ -145,7 +149,8 @@ class DetailSku extends React.Component {
 }
 const mapStateToProps = (state) => {
     return {
-        cartInfo: getCartInfo(state)
+        cartInfo: getCartInfo(state),
+        userInfo: getUserInfo(state)
     }
 }
 const mapDispatchToProps = (dispatch) => {

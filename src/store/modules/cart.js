@@ -3,54 +3,54 @@
  */
 const initState = {
     cart: [
-        {
-            user_phone: "15168828761",
-            goods_id: "00002",
-            goods_name: "圣罗兰/YSL 指甲油50ml",
-            goods_thumb: "http://47.106.12.223:8569/static/img/01.png",
-            goods_attr: ["2L", '3岁以下'],
-            original_price: 100,
-            reduct_price: 69,
-            goods_number: 2,
-            goods_total: 254,
-            shop_id: 99,
-            shop_name: "杭州保税区",
-            add_time: "1546515637000",
-            is_check: true,
-            cost_price: 138
-        },
-        {
-            user_phone: "15168828761",// 用户名
-            goods_id: "00001",// 商品编号
-            goods_name: "美国/SUPER MILD沐浴露500ml",// 商品名称
-            goods_thumb: "http://47.106.12.223:8569/static/img/01.png",// 商品缩略图
-            goods_attr: ["1L", '5岁以下'],// 商品属性
-            original_price: 96,// 原始价格
-            reduct_price: 88,// 优惠价格
-            goods_number: 1,// 购买数量
-            goods_total: 254,// 商品库存
-            shop_id: 98,// 店铺编号(写死)
-            shop_name: "济南保税区",// 店铺名称(写死)
-            add_time: "1546515637000",// 添加时间
-            is_check: true,// 是否选中
-            cost_price: 88// 购买数量*优惠价格
-        },
-        {
-            user_phone: "15168828761",
-            goods_id: "00003",
-            goods_name: "圣罗兰/YSL 指甲油20ml",
-            goods_thumb: "http://47.106.12.223:8569/static/img/01.png",
-            goods_attr: ["2L", '3岁以下'],
-            original_price: 100,
-            reduct_price: 69,
-            goods_number: 1,
-            goods_total: 254,
-            shop_id: 99,
-            shop_name: "杭州保税区",
-            add_time: "1546515637000",
-            is_check: false,
-            cost_price: 69
-        }
+        // {
+        //     user_phone: "15168828761",
+        //     goods_id: "00002",
+        //     goods_name: "圣罗兰/YSL 指甲油50ml",
+        //     goods_thumb: "http://47.106.12.223:8569/static/img/01.png",
+        //     goods_attr: ["2L", '3岁以下'],
+        //     original_price: 100,
+        //     reduct_price: 69,
+        //     goods_number: 2,
+        //     goods_total: 254,
+        //     shop_id: 99,
+        //     shop_name: "杭州保税区",
+        //     add_time: "1546515637000",
+        //     is_check: true,
+        //     cost_price: 138
+        // },
+        // {
+        //     user_phone: "15168828761",// 用户名
+        //     goods_id: "00001",// 商品编号
+        //     goods_name: "美国/SUPER MILD沐浴露500ml",// 商品名称
+        //     goods_thumb: "http://47.106.12.223:8569/static/img/01.png",// 商品缩略图
+        //     goods_attr: ["1L", '5岁以下'],// 商品属性
+        //     original_price: 96,// 原始价格
+        //     reduct_price: 88,// 优惠价格
+        //     goods_number: 1,// 购买数量
+        //     goods_total: 254,// 商品库存
+        //     shop_id: 98,// 店铺编号(写死)
+        //     shop_name: "济南保税区",// 店铺名称(写死)
+        //     add_time: "1546515637000",// 添加时间
+        //     is_check: true,// 是否选中
+        //     cost_price: 88// 购买数量*优惠价格
+        // },
+        // {
+        //     user_phone: "15168828761",
+        //     goods_id: "00003",
+        //     goods_name: "圣罗兰/YSL 指甲油20ml",
+        //     goods_thumb: "http://47.106.12.223:8569/static/img/01.png",
+        //     goods_attr: ["2L", '3岁以下'],
+        //     original_price: 100,
+        //     reduct_price: 69,
+        //     goods_number: 1,
+        //     goods_total: 254,
+        //     shop_id: 99,
+        //     shop_name: "杭州保税区",
+        //     add_time: "1546515637000",
+        //     is_check: false,
+        //     cost_price: 69
+        // }
     ]
 }
 
@@ -103,8 +103,19 @@ export const checkOutInfoAction = (goodsIds) => {
 export const reducerCartAction = (state = initState, action) => {
     switch (action.type) {
         case "addCartInfoAction":
-            let add = Object.assign({}, state, state.cart.push(action.cartInfo));
-            return add;
+            let obj = {}
+            if (state.cart.length == 0) {
+                obj = Object.assign({}, state, state.cart.push(action.cartInfo));
+            }
+            else {
+                for (let i = 0; i < state.cart.length; i++) {
+                    if (state.cart[i].goods_id == action.cartInfo.goods_id) {
+                        state.cart[i].goods_number += action.cartInfo.goods_number
+                    }
+                }
+                obj = Object.assign({}, state);
+            }
+            return obj;
             break;
         case "editIsCheckCartInfoAction":
             for (let i = 0; i < state.cart.length; i++) {
