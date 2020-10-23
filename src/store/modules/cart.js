@@ -111,6 +111,7 @@ export const reducerCartAction = (state = initState, action) => {
                 for (let i = 0; i < state.cart.length; i++) {
                     if (state.cart[i].goods_id == action.cartInfo.goods_id) {
                         state.cart[i].goods_number += action.cartInfo.goods_number
+                        state.cart[i].cost_price = state.cart[i].goods_number * state.cart[i].reduct_price
                     }
                 }
                 obj = Object.assign({}, state);

@@ -17,7 +17,7 @@ class CommonHeader extends React.Component {
                 className="navBar"
                 mode="light"
                 icon={<IconFont type="icon-fanhui" className="iconClass" />}
-                onLeftClick={() => console.log('onLeftClick')}
+                onLeftClick={() => this.props.history.go(-1)}
                 rightContent={[
                     "文字",
                 ]}

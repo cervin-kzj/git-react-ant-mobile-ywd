@@ -61,7 +61,7 @@ class Detail extends React.Component {
                         </div>
                     </div>
                     <div className="item" style={{ marginTop: '0.1rem' }}>
-                        <div className="price">
+                        <div className="detailprice">
                             <span className="item-act-price">
                                 <span className="rmb">¥</span>{reduct_price}
                             </span>

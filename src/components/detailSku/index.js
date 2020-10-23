@@ -51,8 +51,17 @@ class DetailSku extends React.Component {
     addCart() {
         // console.log(this.props.detail);
         let { pid, name, total, original_price, reduct_price, swiperImgArr } = this.props.detail;
-        // console.log(this.props.type);
-        // this.props.skumain(false)
+        if (this.props.cartInfo.length == 0) {
+            var goods_number = 0;
+        } else {
+            let arr = this.props.cartInfo;
+            var goods_number = 0;
+            arr.forEach((item, index) => {
+                if (item.goods_id == pid) {
+                    goods_number = item.goods_number
+                }
+            });
+        }
         let info = {
             user_phone: this.props.userInfo.phone,
             goods_id: pid,
@@ -67,9 +76,10 @@ class DetailSku extends React.Component {
             shop_name: "杭州保税区",
             add_time: new Date().getTime(),
             is_check: true,
-            cost_price: parseFloat(this.state.goodsNumber * reduct_price).toFixed(2)
+            cost_price: parseFloat((this.state.goodsNumber + goods_number) * reduct_price).toFixed(2)
         };
         this.props.addCart(info);
+        this.props.skumain(false);
     }
     render() {
         let { total, reduct_price, swiperImgArr, buySelect } = this.props.detail;

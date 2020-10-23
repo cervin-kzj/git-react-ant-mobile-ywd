@@ -40,6 +40,7 @@ class Cart extends React.Component {
         newCartInfo.sort((a, b) => {
             return a.shop_id - b.shop_id
         })
+        
         let arr = [];
         if (newCartInfo.length == 1) {
             arr.push({
