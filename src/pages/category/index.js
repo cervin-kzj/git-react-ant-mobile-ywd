@@ -1,23 +1,25 @@
 import React from "react"
+import { connect } from "react-redux"
+import { getClassifyData, requestClassifyDataAction } from "../../store/modules/category"
 import { Tabs, } from 'antd-mobile';
 import CommonSearch from "../../components/commonSearch"
 import CommonFooter from "../../components/commonFooter"
 // import "./category.css"
 import "./category.styl";
 
-const tabs = [
-    { title: '母婴专区' },
-    { title: '美妆护肤' },
-    { title: '家居生活' },
-    { title: '食品营养' },
-    { title: '全球直购' },
-];
-
 class Category extends React.Component {
     constructor(props) {
         super(props)
     }
+    componentWillMount() {
+        this.props.requestClassifyData()
+    }
     render() {
+        let getClassify = this.props.getClassify;
+        const tabs = [];
+        getClassify.forEach((item, index) => {
+            tabs.push({ title: item.name })
+        })
         return (
             <div className="categoryWrap">
                 <CommonSearch></CommonSearch>
@@ -31,78 +33,29 @@ class Category extends React.Component {
                         tabBarBackgroundColor="#fafafa"
                         tabBarTextStyle={{ fontSize: '0.26rem' }}
                     >
-                        <div className="categoryItem">
-                            <ul>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
+                        {
+                            this.props.getClassify.map((item, index) => {
+                                return (
+                                    <div className="categoryItem" key={index}>
+                                        <ul>
+                                            {
+                                                item.list.map((item, index) => {
+                                                    return (
+                                                        <li className="item" key={index}>
+                                                            <div className="cateThumb">
+                                                                <img src={item.thumbnail} alt={item.name} />
+                                                            </div>
+                                                            <h3 className="cateTitle">{item.name}</h3>
+                                                        </li>
+                                                    )
+                                                })
+                                            }
+                                        </ul>
                                     </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
-                                    </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
-                                    </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
-                                    </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                            </ul>
-                        </div>
+                                )
+                            })
+                        }
 
-                        <div className="categoryItem">
-                            <ul>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
-                                    </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="categoryItem">
-                            <ul>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
-                                    </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="categoryItem">
-                            <ul>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
-                                    </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="categoryItem">
-                            <ul>
-                                <li className="item">
-                                    <div className="cateThumb">
-                                        <img src={require('../../assets/image/thumb.jpg')} alt="" />
-                                    </div>
-                                    <h3 className="cateTitle">奶粉</h3>
-                                </li>
-                            </ul>
-                        </div>
                     </Tabs>
                 </div>
                 <CommonFooter></CommonFooter>
@@ -110,5 +63,14 @@ class Category extends React.Component {
         )
     }
 }
-
-export default Category;
+const mapStateToProps = (state) => {
+    return {
+        getClassify: getClassifyData(state),
+    }
+}
+const mapStateToDispatch = (dispatch) => {
+    return {
+        requestClassifyData: () => dispatch(requestClassifyDataAction()),
+    }
+}
+export default connect(mapStateToProps, mapStateToDispatch)(Category);
