@@ -14,9 +14,14 @@ const setDetailsAction = (detail) => {
 export const requestDetailsAction = (pid) => {
     return (dispatch, getState) => {
         try {
-            getDetails(pid).then((res) => {
-                dispatch(setDetailsAction(res.data.data));
-            })
+            if (getState().detail.detail.pid == pid) {
+                dispatch(setDetailsAction(getState().detail.detail))
+            }
+            else {
+                getDetails(pid).then((res) => {
+                    dispatch(setDetailsAction(res.data.data));
+                })
+            }
         }
         catch (e) {
             console.warn(e);

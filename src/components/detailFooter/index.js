@@ -22,9 +22,9 @@ class DetailFooter extends React.Component {
             <div className="detailFooter">
                 <div className="totalBox">
                     <div className="total">
-                        <span className="zj">总价:</span>
-                        <span className="rmb">¥</span>
-                        <span className="je">88.00</span>
+                        {/* <span className="zj">总价:</span> */}
+                        {/* <span className="rmb">¥</span> */}
+                        {/* <span className="je">88.00</span> */}
                     </div>
                 </div>
                 <ul className="item">

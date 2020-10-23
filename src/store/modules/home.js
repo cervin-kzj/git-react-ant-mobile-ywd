@@ -14,9 +14,13 @@ const setIndexDataAction = (indexData) => {
 export const requestIndexDataAction = () => {
     return (dispatch, getState) => {
         try {
-            getIndexData().then((res) => {
-                dispatch(setIndexDataAction(res.data.data));
-            })
+            if (getState().indexData.indexData.length == 0) {
+                getIndexData().then((res) => {
+                    dispatch(setIndexDataAction(res.data.data));
+                })
+            } else {
+                dispatch(getState().indexData.indexData)
+            }
         }
         catch (e) {
             console.warn(e);

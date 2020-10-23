@@ -13,9 +13,14 @@ const setClassifyDataAction = (arr) => {
 export const requestClassifyDataAction = () => {
     return (dispatch, getState) => {
         try {
-            getClassify().then((res) => {
-                dispatch(setClassifyDataAction(res.data.data))
-            })
+            if (getState().category.category.length == 0) {
+                getClassify().then((res) => {
+                    dispatch(setClassifyDataAction(res.data.data))
+                })
+            }
+            else {
+                dispatch(getState().category.category)
+            }
         }
         catch (e) {
             console.warn(e);
